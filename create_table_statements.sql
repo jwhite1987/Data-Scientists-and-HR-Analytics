@@ -1,14 +1,13 @@
+DROP TABLE IF EXISTS data_scientist_education_level_tbl;
+
 -- Create tables for raw data to be loaded into
-CREATE TABLE data_scientist_tbl (
-id INT PRIMARY KEY,
-field1 TEXT,
-field2 TEXT
-field3 TEXT
-field4 TEXT
-field5 TEXT
+CREATE TABLE data_scientist_education_level_tbl (
+	id SERIAL PRIMARY KEY,
+	Education_Level TEXT,
+	DataSource TEXT
 );
 
 
 -- Joins tables
 SELECT *
-FROM data_scientist_tbl;
+FROM data_scientist_education_level_tbl;
