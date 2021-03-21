@@ -4,10 +4,10 @@ DROP TABLE IF EXISTS data_scientist_education_level_tbl;
 CREATE TABLE data_scientist_education_level_tbl (
 	id SERIAL PRIMARY KEY,
 	Education_Level TEXT,
-	DataSource TEXT
+	Source TEXT
 );
 
 
--- Joins tables
+-- Query all rows
 SELECT *
 FROM data_scientist_education_level_tbl;
