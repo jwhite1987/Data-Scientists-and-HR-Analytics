@@ -38,7 +38,7 @@ We generated another table for each dataset with the common column, which is edu
 
 #### Load:
 
-The ultimate goal of an extract, transform, and load (ETL) process is to store data in a permanent location. This is usually an operational database or data warehouse. We used a relational database, PostgreSQL, to append the records of both dataframes into a single postgres table.
+The ultimate goal of an extract, transform, and load (ETL) process is to store data in a permanent location. This is usually an operational database or data warehouse. We used a relational database, PostgreSQL, to append the records of both dataframes into a single postgres table. Postgres must be locally operational (localhost:5432) and a database data_scientist_DB must have been previously created with the corresponding data_scientist_education_level_tbl. A valid password in config.py file is also needed.
 
 ![Resources/images/fig6.png](Resources/images/fig6.png)
 
