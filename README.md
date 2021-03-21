@@ -6,14 +6,16 @@ In our project we took two datasets from Kaggle, “How much do data scientists 
 
 ### Report
 
-#### Sources of data:
+![Resources/images/ETL-Process.png](Resources/images/ETL-Process.png)
+
+#### Extract:
 We used two datasets from Kaggle, “How much do data scientists earn in 2017-2020,” and “HR Analytics.”
-- How much do data scientists earn in 2017-2020 – evaluates the impact different variables have on the expected salary of data scientists in the international market.
+- How much do data scientists earn in 2017-2020 – is a survey that evaluates the impact different variables have on the expected salary of data scientists in the international market.
 
 - HR Analytics – gauges the factors that lead an employee to leave a current job, including education, experience, and company loyalty.
 
 
-#### Transformation of the data:
+#### Transformation:
 Our first steps in cleaning up the datasets included learning the definition of each variable and deciding whether it was relevant. An example of this was in the HR Analytics dataset, where “City” was coded by city, but the code was not defined.
 
 ![Resources/images/fig1.png](Resources/images/fig1.png)
@@ -30,10 +32,17 @@ Similarly, the Data Scientist Salary dataset was transformed in several steps. F
 
 ![Resources/images/fig4.png](Resources/images/fig4.png)
 
+We generated another table for each dataset with the common column, which is education level per data scientist. We also added a column named "source", that will be "Survey" for the Data Scientist Salary dataset and "HR"for the HR Analytics dataset.
 
-Generate a table from each dataset with education level per data scientist.
-For instance: Survey table (Education level, source=Survey), HR table (Education level, source=HR)
+![Resources/images/fig5.png](Resources/images/fig5.png)
 
-#### Type of final production database data is loaded into:
-We used a relational database (PostgreSQL) to link the data by our common identifier, education level.
-For instance: Data Scientist Education level table (Education level, source=HR)
+#### Load:
+
+The ultimate goal of an extract, transform, and load (ETL) process is to store data in a permanent location. This is usually an operational database or data warehouse. We used a relational database, PostgreSQL, to append the records of both dataframes into a single postgres table.
+
+![Resources/images/fig6.png](Resources/images/fig6.png)
+
+Finally, we obtained from postgres a summary table with typical education level for data scientists.
+
+![Resources/images/fig7.png](Resources/images/fig7.png)
+
