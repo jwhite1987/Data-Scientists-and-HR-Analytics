@@ -47,6 +47,14 @@ Finally, we obtained from postgres a summary table with typical education level 
 
 ![Resources/images/fig7.png](Resources/images/fig7.png)
 
+## Languages & Technology Used
+
+- PostgreSQL
+- Jupyter Notebook
+- Python
+- Pandas
+- Kaggle
+
 ## Team Members:
 
 - Sarah Klein
