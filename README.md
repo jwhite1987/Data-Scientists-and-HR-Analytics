@@ -1,27 +1,26 @@
-## ETL Project: Data Scientist Jobs
-#### By Sarah Klein, Luis Rojas, Jimmy White
+# `ETL Project: Data Scientist Jobs`
 
-### Proposal
+## Project Proposal
 In our project we took two datasets from Kaggle, “How much do data scientists earn in 2017-2020,” and “HR Analytics: Job Change of Data Scientists” and extracted/transformed the data via Jupyter Notebook, set up our tables with pgAdmin and finally loaded the data into postgres.
 
-### Report
+## Report
 
 ![Resources/images/ETL-Process.png](Resources/images/ETL-Process.png)
 
-#### Extract:
+### Extract:
 We used two datasets from Kaggle, “How much do data scientists earn in 2017-2020,” and “HR Analytics.”
 - How much do data scientists earn in 2017-2020 – is a survey that evaluates the impact different variables have on the expected salary of data scientists in the international market.
 
 - HR Analytics – gauges the factors that lead an employee to leave a current job, including education, experience, and company loyalty.
 
 
-#### Transformation:
+### Transformation:
 Our first steps in cleaning up the datasets included learning the definition of each variable and deciding whether it was relevant. An example of this was in the HR Analytics dataset, where “City” was coded by city, but the code was not defined.
 
 ![Resources/images/fig1.png](Resources/images/fig1.png)
 
 
-We found that in the database HR Analytics the column for length of time at their current job was labeled “never” if it was a new job, less than a year. We changed “never” to “0.” 
+We found that in the database HR Analytics the column for length of time at their current job was labeled “never” if it was a new job, less than a year. We changed “never” to “0.”
 Additionally, in the actively searching for a new job column, 1.0 and 0.0 was used to represent “Yes” and “No” respectively. We changed the values of the “Active” column for ease of readability.
 
 ![Resources/images/fig2.png](Resources/images/fig2.png)
@@ -36,9 +35,9 @@ We generated another table for each dataset with the common column, which is edu
 
 ![Resources/images/fig5.png](Resources/images/fig5.png)
 
-#### Load:
+## Load:
 
-The ultimate goal of an extract, transform, and load (ETL) process is to store data in a permanent location. This is usually an operational database or data warehouse. We used a relational database, PostgreSQL, to append the records from both education level dataframes into a single postgres table. 
+The ultimate goal of an extract, transform, and load (ETL) process is to store data in a permanent location. This is usually an operational database or data warehouse. We used a relational database, PostgreSQL, to append the records from both education level dataframes into a single postgres table.
 
 Usage: postgres must be locally operational (localhost:5432) and a database data_scientist_DB must have been previously created with the corresponding data_scientist_education_level_tbl. A valid password in config.py file is also needed.
 
@@ -48,3 +47,12 @@ Finally, we obtained from postgres a summary table with typical education level 
 
 ![Resources/images/fig7.png](Resources/images/fig7.png)
 
+## Team Members:
+
+- Sarah Klein
+- Luis Rojas
+- Jimmy White
+
+## Links
+- [JWhiteAnalytics.com](https://jwhiteanalytics.com)
+- [LinkedIn](https://www.linkedin.com/in/jimmywhite1987)
